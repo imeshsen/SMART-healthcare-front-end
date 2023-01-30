@@ -1,0 +1,47 @@
+
+
+.Navbar{
+    background-color: rgb(8, 90, 90);
+    width: 100%;
+    height: 80px;
+    display: flex;
+}
+
+.Navbar .leftSide{
+    flex: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.Navbar .leftSide .links{
+    max-height: 80px;
+}
+
+.Navbar .leftSide .links a{
+    color: aliceblue;
+    font-size: 25px;
+    margin-left: 15px;
+}
+
+.Navbar .rightSide{
+    flex: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 25px;
+}
+
+.Navbar .rightSide input{
+    width: 200px;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 15px;
+}
+
+.Navbar .rightSide button{
+    height: 30px;
+    cursor: pointer;
+}
+

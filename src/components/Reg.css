@@ -1,0 +1,33 @@
+.register1{
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    padding: 15%;
+    padding-top: 15%;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    color: #e9ecef;
+    align-items: center;
+    text-align: center;
+}
+
+.register1 input{
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    width: 30%;
+    height: 30px;
+    box-shadow: #e9ecef;
+}
+
+.register1 .btn{
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    width: 30%;
+    height: 30px;
+    background-color: deeppink;
+    color: aliceblue;
+    padding: 5px;
+    box-shadow: #e9ecef;
+
+}

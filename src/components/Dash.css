@@ -1,0 +1,47 @@
+.content {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.content .content-left {
+  background-color: rgb(10, 7, 100);
+  color: aliceblue;
+  display: flex;
+  flex: 20%;
+  flex-direction: column;
+}
+
+.content .content-right {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex: 80%;
+  color: rgb(0, 0, 0);
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: aliceblue;
+}
+
+.content .content-right h3{
+    color: blue;
+    justify-content: center;
+}
+
+.content .content-right .form input{
+    border-radius: 5px;
+    background-color: rgb(188, 236, 240);
+    width: 350px;
+    height: 25px;
+    justify-content: center;
+}
+
+.btnsubmit{
+  border-radius: 5px;
+    background-color: rgb(34, 155, 98);
+    color: aliceblue;
+    width: 350px;
+    height: 25px;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
