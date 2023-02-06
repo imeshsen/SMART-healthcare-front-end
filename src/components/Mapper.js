@@ -7,6 +7,7 @@ import Register from "./Register";
 import Reg from "./Reg";
 import Lgin from "./Lgin";
 import Usr from "./User";
+import Admin from "./Admin";
 
 export default function Mapper() {
   return (
@@ -20,6 +21,7 @@ export default function Mapper() {
           <Route path="/reg" element={<Reg />}></Route>
           <Route path="/lgin" element={<Lgin />}></Route>
           <Route path="/user" element={<Usr />}></Route>
+          <Route path="/admin" element={<Admin />}></Route>
         </Routes>
       </Router>
     </div>
