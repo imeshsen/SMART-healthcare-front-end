@@ -12,7 +12,6 @@ function Home() {
 
         <button
           className="btn1"
-          style={{ width: "150%" }}
           onClick={() => {
             navigate("/lgin");
           }}
@@ -24,7 +23,6 @@ function Home() {
 
         <button
           className="btn2"
-          style={{ width: "150%" }}
           onClick={() => {
             navigate("/reg");
           }}
