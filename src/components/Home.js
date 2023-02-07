@@ -1,15 +1,17 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
+import HomeNavbar from "./HomeNavbar";
 
 function Home() {
   const navigate = useNavigate();
 
   return (
-    <form className="form1">
+    <div>
+      <HomeNavbar/>
+      <form className="form1">
       <div>
         <h3>Already a member?</h3>
-
         <button
           className="btn1"
           onClick={() => {
@@ -31,6 +33,8 @@ function Home() {
         </button>
       </div>
     </form>
+    </div>
+    
   );
 }
 
