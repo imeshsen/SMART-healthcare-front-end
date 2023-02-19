@@ -24,6 +24,7 @@
     background-color: rgb(24, 212, 150);
     height: 25px;
     color: aliceblue;
+    cursor: pointer;
 }
 
 .login{
