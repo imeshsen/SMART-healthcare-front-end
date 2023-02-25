@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Dash.css";
 import Navbar from "./Navbar";
 
@@ -33,7 +33,8 @@ export default function () {
         body: JSON.stringify(patient),
       }).then(() => {
         alert("Success !");
-        navigate("/user");
+         navigate(`/user/${patient.nic}`);
+        
       });
     }
   };
@@ -62,7 +63,7 @@ export default function () {
           <h1>Welcome</h1>
           <h3>Fill up your personal information</h3>
           <div className="form">
-            <form action="http://127.0.0.1:5000/add" method="POST">
+            {/* <form action="http://127.0.0.1:5000/add" method="POST"> */}
               <input
                 type="text"
                 placeholder="Name with initials"
@@ -117,11 +118,12 @@ export default function () {
               )}
               <br />
               <br />
-              <button onClick={face}>take face details</button>
-              <button className="btnsubmit" >
-                Submit
+              <button onClick={face}>take face details</button><br></br>
+              <button className="btnsubmit" onClick={handleclick}>
+                Update Data
               </button>
-            </form>
+
+            {/* </form> */}
           </div>
         </div>
       </div>

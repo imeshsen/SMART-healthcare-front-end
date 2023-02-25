@@ -20,7 +20,7 @@ export default function Mapper() {
           <Route path="/dashboard" element={<Dashboard />}></Route>
           <Route path="/reg" element={<Reg />}></Route>
           <Route path="/lgin" element={<Lgin />}></Route>
-          <Route path="/user" element={<Usr />}></Route>
+          <Route path="/user/:nic" element={<Usr />}></Route>
           <Route path="/admin" element={<Admin />}></Route>
         </Routes>
       </Router>

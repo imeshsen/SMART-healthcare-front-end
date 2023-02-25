@@ -1,49 +1,57 @@
-import React, { useState } from 'react'
-import "./User.css"
-export default function User() {
-    const [type,setType] = useState("");
-    const [name,setName] = useState("");
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-    const listnames=(e)=>{
-        console.log(type);
-    }
+export default function User() {
+
+  const[patient,setPatient] = useState({
+    name:"",
+    nic:"",
+    mobile:"",
+    hometown:""
+  });
+
+  const {nic} = useParams();
+
+  useEffect(()=>{
+    loadDetails()
+  },[]);
+
+  const loadDetails=async ()=>{
+    const result = await axios.get(`http://localhost:8080/api/v1/patient/search/${nic}`)
+    setPatient(result.data)
+  }
+
   return (
-    <div className='user'>
-        <h3>Welcome User</h3>
-        <form>
-            <div className='form'> 
-        <h3>Select disease type</h3>
-        <div className='type'>
-        <select value={type}>
-                <option value='common diseases' onChange={(e)=>{setType(e.target.value)}}>Common Diseases</option>
-                <option value='gastroenterological diseases' onChange={(e)=>{setType(e.target.value)}}>Gastroenterological diseases</option>
-                <option value='respiratory diseases' onChange={(e)=>{setType(e.target.value)}}>Respiratory diseases</option>
-                <option value='cardiovascular diseases' onChange={(e)=>{setType(e.target.value)}}>Cardiovascular diseases</option>
-                <option value='urologic diseases' onChange={(e)=>{setType(e.target.value)}}>Urologic diseases</option>
-                <option value='gynecological diseases' onChange={(e)=>{setType(e.target.value)}}>Gynecological diseases</option>
-                <option value='andrological diseases' onChange={(e)=>{setType(e.target.value)}}>Andrological diseases</option>
-                <option value='anorectal diseases' onChange={(e)=>{setType(e.target.value)}}>Anorectal diseases</option>
-                <option value='vascular diseases' onChange={(e)=>{setType(e.target.value)}}>Vascular diseases</option>
-            </select>
-            <button onClick={listnames}> Search</button>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
+          <h2 className="text-center m-4">Patient Details</h2>
+          <div className="card">
+            <div className="card-header">
+              Hello {patient.name}!
+              <ul className="list-group list-group-fluh">
+                <li className="list-group-item">
+                  <b>Name: {patient.name}</b>
+                </li>
+                <li className="list-group-item">
+                  <b>NIC: {patient.nic}</b>
+                </li>
+                <li className="list-group-item">
+                  <b>Mobile: {patient.mobile}</b>
+                </li>
+                <li className="list-group-item">
+                  <b>Hometown: {patient.hometown}</b>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <Link className="btn btn-primary my-2" to={"/"}>
+            Log out
+          </Link>
         </div>
-            
-            <div className='name'>
-            <h3>Or select the disease directly</h3>
-            <select value={name}>
-                <option value='common diseases'>Common Diseases</option>
-                <option value='gastroenterological diseases'>Gastroenterological diseases</option>
-                <option value='respiratory diseases'>Respiratory diseases</option>
-                <option value='cardiovascular diseases'>Cardiovascular diseases</option>
-                <option value='urologic diseases'>Urologic diseases</option>
-                <option value='gynecological diseases'>Gynecological diseases</option>
-                <option value='andrological diseases'>Andrological diseases</option>
-                <option value='anorectal diseases'>Anorectal diseases</option>
-                <option value='vascular diseases'>Vascular diseases</option>
-            </select>
-            </div>
-            </div>
-        </form>
+      </div>
     </div>
-  )
+  );
 }
