@@ -4,18 +4,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Diseaselist() {
 
-    const[data,setData] = useState({
-        name:"",
-        type:"",
-        specialist:""
-    });
+    const[data,setData] = useState([]);
 
     useEffect(()=>{
         loadData();
     },[]);
 
     const loadData=async ()=>{
-        const results = await axios.get("http://localhost:8080/api/v1/diseases/findall")
+        const results = await axios.get(`http://localhost:8080/api/v1/diseases/findall`)
         setData(results.data);
         console.log(results);
     }
