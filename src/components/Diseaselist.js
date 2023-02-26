@@ -3,23 +3,33 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Diseaselist() {
+  const [data, setData] = useState([]);
+  const [search, setSerach] = useState("");
 
-    const[data,setData] = useState([]);
+  useEffect(() => {
+    loadData();
+  }, []);
 
-    useEffect(()=>{
-        loadData();
-    },[]);
-
-    const loadData=async ()=>{
-        const results = await axios.get(`http://localhost:8080/api/v1/diseases/findall`)
-        setData(results.data);
-        console.log(results);
-    }
+  const loadData = async () => {
+    const results = await axios.get(
+      `http://localhost:8080/api/v1/diseases/findall`
+    );
+    setData(results.data);
+    console.log(results);
+  };
 
   return (
     <div className="container">
-         <div className="py-4">
-            <h2 className="text-center">List View</h2>
+      <div className="py-4">
+        <input
+          type={"text"}
+          className="txt border shadow"
+          placeholder="Search here"
+          onChange={(e) => {
+            setSerach(e.target.value);
+          }}
+        ></input>
+        <h2 className="text-center">List View</h2>
         <table className="table border shadow">
           <thead>
             <tr>
@@ -31,17 +41,26 @@ export default function Diseaselist() {
             </tr>
           </thead>
           <tbody>
-            {data.map((disease, index) => (
-              <tr>
-                <th scope="row" key={index}>
-                  {index + 1}
-                </th>
-                <td>{disease.name}</td>
-                <td>{disease.type}</td>
-                <td>{disease.specialist}</td>
-                
-              </tr>
-            ))}
+            {data
+              .filter((disease) => {
+                if (search == "") {
+                  return disease;
+                } else if (
+                  disease.name.toLowerCase().includes(search.toLowerCase())
+                ) {
+                  return disease;
+                }
+              })
+              .map((disease, index) => (
+                <tr>
+                  <th scope="row" key={index}>
+                    {index + 1}
+                  </th>
+                  <td>{disease.name}</td>
+                  <td>{disease.type}</td>
+                  <td>{disease.specialist}</td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
