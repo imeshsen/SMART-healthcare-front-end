@@ -1,4 +1,3 @@
-import { async } from "@firebase/util";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -28,7 +27,7 @@ export default function Diseaselist() {
         <table className="table border shadow">
           <thead>
             <tr>
-              <th scope="col"></th>
+              <th scope="col">ID</th>
               <th scope="col">Name</th>
               <th scope="col">Type</th>
               <th scope="col">Specialist</th>
