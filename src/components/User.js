@@ -1,27 +1,28 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function User() {
-
-  const[patient,setPatient] = useState({
-    name:"",
-    nic:"",
-    mobile:"",
-    hometown:""
+  const [patient, setPatient] = useState({
+    name: "",
+    nic: "",
+    mobile: "",
+    hometown: "",
   });
 
-  const {nic} = useParams();
+  const { nic } = useParams();
 
-  useEffect(()=>{
-    loadDetails()
-  },[]);
+  useEffect(() => {
+    loadDetails();
+  }, []);
 
-  const loadDetails=async ()=>{
-    const result = await axios.get(`http://localhost:8080/api/v1/patient/search/${nic}`)
-    setPatient(result.data)
-  }
+  const loadDetails = async () => {
+    const result = await axios.get(
+      `http://localhost:8080/api/v1/patient/search/${nic}`
+    );
+    setPatient(result.data);
+  };
 
   return (
     <div className="container">
@@ -29,7 +30,7 @@ export default function User() {
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
           <h2 className="text-center m-4">Patient Details</h2>
           <div className="card">
-            <div className="card-header">
+            <div className="card-header text-center">
               Hello {patient.name}!
               <ul className="list-group list-group-fluh">
                 <li className="list-group-item">
@@ -47,9 +48,7 @@ export default function User() {
               </ul>
             </div>
           </div>
-          <Link className="btn btn-primary my-2" to={"/"}>
-            Log out
-          </Link>
+          <Link className="btn btn-primary my-2 mx-6" to={"/disease"}>Proceed to Disease section</Link>
         </div>
       </div>
     </div>

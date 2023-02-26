@@ -3,11 +3,12 @@ import Login from "./Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
 import Dashboard from "./Dashboard";
-import Register from "./Register";
 import Reg from "./Reg";
 import Lgin from "./Lgin";
 import Usr from "./User";
 import Admin from "./Admin";
+import Disease from "./Disease";
+import Diseaselist from "./Diseaselist";
 
 export default function Mapper() {
   return (
@@ -16,12 +17,13 @@ export default function Mapper() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />}></Route>
           <Route path="/dashboard" element={<Dashboard />}></Route>
           <Route path="/reg" element={<Reg />}></Route>
           <Route path="/lgin" element={<Lgin />}></Route>
           <Route path="/user/:nic" element={<Usr />}></Route>
           <Route path="/admin" element={<Admin />}></Route>
+          <Route path="/disease" element={<Disease/>}></Route>
+          <Route path="/list" element={<Diseaselist/>}></Route>
         </Routes>
       </Router>
     </div>
