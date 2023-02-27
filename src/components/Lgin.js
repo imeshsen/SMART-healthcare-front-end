@@ -12,13 +12,8 @@ export default function Lgin() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        fetch("http://127.0.0.1:5000/start", {
-      }).then(() => {
-        alert("Success !");
-        navigate("/dashboard");
-      });
         alert("Success!");
-        navigate("/dashboard");
+        navigate(`/user/${nic}`);
         // ...
       })
       .catch((error) => {
@@ -30,23 +25,37 @@ export default function Lgin() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [nic, setNic] = useState("");
 
   return (
     <div className="login">
       <div className="flex-left">
         <h1>Login</h1>
         <input
+          type="NIC"
+          placeholder="Enter your NIC"
+          value={nic}
+          onChange={(e) => setNic(e.target.value)}
+          required
+        ></input>
+        <br />
+        <br />
+        <input
           type="text"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        ></input><br/><br/>
+        ></input>
+        <br />
+        <br />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        ></input><br/><br/>
+        ></input>
+        <br />
+        <br />
         <button onClick={login} className="btnlgin">
           Sign in
         </button>

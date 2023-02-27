@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useParams } from "react-router-dom";
-import { async } from "@firebase/util";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function Disease() {
   const [diseases, setDiseases] = useState([]);
 
-  const { name } = useParams();
+  const [value, setValue] = useState("");
+
 
   useEffect(() => {
     loadDiseaseNames();
@@ -28,28 +28,28 @@ export default function Disease() {
           <h2 className="text-center m-4">Choose your Disease</h2>
 
           <select
-            className="form-control"
+            className="form-control" value={value} onChange={(e)=>{setValue(e.target.value)}}
           >
             <option value="">Choose  Name</option>
 
             {diseases.map((disease) => (
-              <option value={disease.name} key={disease.name}>
+              <option  key={disease.name} >
                 {disease.name}
               </option>
             ))}
           </select>
 
-          <button type="button" class="btn btn-success mt-1">
+          <Link className="btn btn-success mt-1" to={`/selected/${value}`}>
             Go
-          </button>
+          </Link>
 
           <h3 className="text-center m-4">Or</h3>
 
           
 
-          <button type="button" class="btn btn-success mt-1">
+          <Link type="button" class="btn btn-success mt-1" to={"/list"}>
             View full list
-          </button>
+          </Link>
         </div>
       </div>
     </div>

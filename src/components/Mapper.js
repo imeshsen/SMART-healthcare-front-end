@@ -9,6 +9,7 @@ import Usr from "./User";
 import Admin from "./Admin";
 import Disease from "./Disease";
 import Diseaselist from "./Diseaselist";
+import Selecteddisease from "./Selecteddisease";
 
 export default function Mapper() {
   return (
@@ -24,6 +25,7 @@ export default function Mapper() {
           <Route path="/admin" element={<Admin />}></Route>
           <Route path="/disease" element={<Disease/>}></Route>
           <Route path="/list" element={<Diseaselist/>}></Route>
+          <Route path="/selected/:value" element={<Selecteddisease/>}></Route>
         </Routes>
       </Router>
     </div>

@@ -8,7 +8,7 @@ export default function Admin() {
   const [specialist, setSpecialist] = useState("");
 
   const handleClick = (e) => {
-    const data = {type, name , specialist}
+    const data = {name, type , specialist}
 
     fetch("http://localhost:8080/api/v1/diseases/save",{
         method: "POST",
@@ -25,17 +25,17 @@ export default function Admin() {
       <div className="admin">
         <input
           type="text"
-          value={type}
-          placeholder="Disease type"
-          onChange={(e) => setType(e.target.value)}
-          required
+          value={name}
+          placeholder="Disease name"
+          onChange={(e) => setName(e.target.value)}
         ></input>
         <br /><br/>
         <input
           type="text"
-          value={name}
-          placeholder="Disease name"
-          onChange={(e) => setName(e.target.value)}
+          value={type}
+          placeholder="Disease type"
+          onChange={(e) => setType(e.target.value)}
+          required
         ></input>
         <br /><br/>
         <input

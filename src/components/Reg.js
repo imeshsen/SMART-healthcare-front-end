@@ -12,6 +12,7 @@ export default function Reg() {
     const navigate = useNavigate();
 
     const register = (e) => {
+      e.preventDefault();
         createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
@@ -33,7 +34,7 @@ export default function Reg() {
   return (
     <div className='register1'>
       <h1>Sign up today</h1>
-        <form action='http://127.0.0.1:5000/add' method='POST'>
+        <form>
           <input type="text" value={email} name="email" placeholder='E mail' onChange={(e) =>setEmail(e.target.value)} required></input><br/><br/>
         <input type="password" value={password} name="password" placeholder='Password'onChange={(e) => setPassword(e.target.value)} required></input><br/><br/>
         <button type='submit' className='btn' onClick={register}>Sign up</button>
