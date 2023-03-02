@@ -6,12 +6,12 @@ export default function AdminNavbar() {
     <div className="adminNavbar">
       <div className="flex-left">
         <div className="links-left">
-          <a href="/">Home</a>
+          <h2>Admin Panel</h2>
         </div>
       </div>
       <div className="flex-right">
         <div className="links-right">
-          <a>About</a>
+          <a href="/">Home</a>
         </div>
       </div>
     </div>

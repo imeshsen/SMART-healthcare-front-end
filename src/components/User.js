@@ -47,8 +47,9 @@ export default function User() {
                 </li>
               </ul>
             </div>
+            <Link className="btn btn-primary my-2 mx-6" to={"/disease"}>Proceed to Disease section</Link>
           </div>
-          <Link className="btn btn-primary my-2 mx-6" to={"/disease"}>Proceed to Disease section</Link>
+          
         </div>
       </div>
     </div>

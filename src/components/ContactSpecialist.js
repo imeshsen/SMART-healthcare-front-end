@@ -1,9 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-export default function Diseaselist() {
+export default function ContactSpecialist() {
   const [data, setData] = useState([]);
   const [search, setSerach] = useState("");
 
@@ -11,9 +10,11 @@ export default function Diseaselist() {
     loadData();
   }, []);
 
+  const {specialist} = useParams();
+
   const loadData = async () => {
     const results = await axios.get(
-      `http://localhost:8080/api/v1/diseases/findall`
+      `http://localhost:8080/api/v1/specialist/${specialist}`
     );
     setData(results.data);
     console.log(results);
@@ -30,37 +31,38 @@ export default function Diseaselist() {
             setSerach(e.target.value);
           }}
         ></input>
-        <h2 className="text-center">List View</h2>
+        <h2 className="text-center">Results</h2>
         <table className="table border shadow">
           <thead>
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Name</th>
-              <th scope="col">Type</th>
-              <th scope="col">Specialist</th>
+              <th scope="col">City</th>
+              <th scope="col">Email</th>
+              <th scope="col">Contact</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
             {data
-              .filter((disease) => {
+              .filter((specialist) => {
                 if (search == "") {
-                  return disease;
+                  return specialist;
                 } else if (
-                  disease.name.toLowerCase().includes(search.toLowerCase())
+                  specialist.name.toLowerCase().includes(search.toLowerCase())
                 ) {
-                  return disease;
+                  return specialist;
                 }
               })
-              .map((disease, index) => (
+              .map((specialist, index) => (
                 <tr>
                   <th scope="row" key={index}>
                     {index + 1}
                   </th>
-                  <td>{disease.name}</td>
-                  <td>{disease.type}</td>
-                  <td>{disease.specialist}</td>
-                  <td><Link className="btn btn-success my-2 mx-6" to={`/contact/${disease.specialist}`}>Find your doctor</Link></td>
+                  <td>{specialist.name}</td>
+                  <td>{specialist.city}</td>
+                  <td>{specialist.email}</td>
+                  <td>{specialist.contact}</td>
                 </tr>
               ))}
           </tbody>

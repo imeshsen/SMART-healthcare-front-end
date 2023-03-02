@@ -8,7 +8,6 @@ export default function Disease() {
 
   const [value, setValue] = useState("");
 
-
   useEffect(() => {
     loadDiseaseNames();
   }, []);
@@ -23,33 +22,36 @@ export default function Disease() {
 
   return (
     <div className="container">
-      <div className="column">
+      <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
           <h2 className="text-center m-4">Choose your Disease</h2>
+          <div className="card">
+            <div className="card-header text-center P-5">
+              <select
+                className="form-control"
+                value={value}
+                onChange={(e) => {
+                  setValue(e.target.value);
+                }}
+              >
+                <option value="">Choose Name</option>
 
-          <select
-            className="form-control" value={value} onChange={(e)=>{setValue(e.target.value)}}
-          >
-            <option value="">Choose  Name</option>
-
-            {diseases.map((disease) => (
-              <option  key={disease.name} >
-                {disease.name}
-              </option>
-            ))}
-          </select>
-
-          <Link className="btn btn-success mt-1" to={`/selected/${value}`}>
-            Go
-          </Link>
-
-          <h3 className="text-center m-4">Or</h3>
-
-          
-
-          <Link type="button" class="btn btn-success mt-1" to={"/list"}>
-            View full list
-          </Link>
+                {diseases.map((disease) => (
+                  <option key={disease.name}>{disease.name}</option>
+                ))}
+              </select>
+            </div>
+            <Link
+              className="btn btn-primary my-2 mx-6 text-right"
+              to={`/selected/${value}`}
+            >
+              Go
+            </Link>
+            <h3 className="text-center m-4">Or</h3>
+            <Link type="button" class="btn btn-primary my-2 mx-6" to={"/list"}>
+              View full list
+            </Link>
+          </div>
         </div>
       </div>
     </div>

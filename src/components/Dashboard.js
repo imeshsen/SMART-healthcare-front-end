@@ -118,7 +118,7 @@ export default function () {
               )}
               <br />
               <br />
-              <button onClick={face}>take face details</button><br></br>
+              {/* <button onClick={face}>take face details</button><br></br> */}
               <button className="btnsubmit" onClick={handleclick}>
                 Update Data
               </button>
