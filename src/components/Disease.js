@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Navbar from "./Navbar";
 
 export default function Disease() {
   const [diseases, setDiseases] = useState([]);
@@ -21,7 +22,9 @@ export default function Disease() {
   };
 
   return (
-    <div className="container">
+    <div>
+      <Navbar/>
+      <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
           <h2 className="text-center m-4">Choose your Disease</h2>
@@ -54,6 +57,7 @@ export default function Disease() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

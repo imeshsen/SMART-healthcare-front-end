@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Navbar from "./Navbar";
 
 export default function ContactSpecialist() {
   const [data, setData] = useState([]);
@@ -21,7 +22,9 @@ export default function ContactSpecialist() {
   };
 
   return (
-    <div className="container">
+    <div>
+      <Navbar/>
+      <div className="container">
       <div className="py-4">
         <input
           type={"text"}
@@ -68,6 +71,7 @@ export default function ContactSpecialist() {
           </tbody>
         </table>
       </div>
+    </div>
     </div>
   );
 }

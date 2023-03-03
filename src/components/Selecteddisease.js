@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import Navbar from './Navbar';
 
 export default function Selecteddisease() {
 
@@ -24,7 +25,9 @@ const loadDetails = async () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div>
+      <Navbar/>
+      <div className="container mt-5">
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
           <h2 className="text-center m-4">Disease Details</h2>
@@ -51,6 +54,7 @@ const loadDetails = async () => {
           
         </div>
       </div>
+    </div>
     </div>
   )
 }

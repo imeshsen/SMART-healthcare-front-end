@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Dash.css";
@@ -32,9 +33,8 @@ export default function () {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(patient),
       }).then(() => {
-        alert("Success !");
-         navigate(`/user/${patient.nic}`);
-        
+        axios.post("http://127.0.0.1:5000/add", patient);
+        navigate(`/user/${patient.nic}`);
       });
     }
   };
@@ -64,64 +64,60 @@ export default function () {
           <h3>Fill up your personal information</h3>
           <div className="form">
             {/* <form action="http://127.0.0.1:5000/add" method="POST"> */}
-              <input
-                type="text"
-                placeholder="Name with initials"
-                value={name}
-                name="name"
-                onChange={(e) => setName(e.target.value)}
-              ></input>
-              {error && name.length <= 0 ? (
-                <label> Email can't be empty</label>
-              ) : (
-                ""
-              )}
-              <br />
-              <br />
-              <input
-                type="text"
-                placeholder="Nic number"
-                value={nic}
-                name="nic"
-                onChange={(e) => setNic(e.target.value)}
-              ></input>
-              {error && nic.length <= 0 ? (
-                <label> NIC can't be empty</label>
-              ) : (
-                ""
-              )}
-              <br />
-              <br />
-              <input
-                type="text"
-                placeholder="Mobile number"
-                value={mobile}
-                onChange={(e) => setMobile(e.target.value)}
-              ></input>
-              {error && mobile.length <= 0 ? (
-                <label> Mobile number can't be empty</label>
-              ) : (
-                ""
-              )}
-              <br />
-              <br />
-              <input
-                type="text"
-                placeholder="Hometown"
-                value={hometown}
-                onChange={(e) => setHometown(e.target.value)}
-              ></input>
-              {error && hometown.length <= 0 ? (
-                <label> Hometown can't be empty</label>
-              ) : (
-                ""
-              )}
-              <br />
-              <br />
-              {/* <button onClick={face}>take face details</button><br></br> */}
-              <button className="btnsubmit" onClick={handleclick}>
-                Update Data
-              </button>
+            <input
+              type="text"
+              placeholder="Name with initials"
+              value={name}
+              name="name"
+              onChange={(e) => setName(e.target.value)}
+            ></input>
+            {error && name.length <= 0 ? (
+              <label> Email can't be empty</label>
+            ) : (
+              ""
+            )}
+            <br />
+            <br />
+            <input
+              type="text"
+              placeholder="Nic number"
+              value={nic}
+              name="nic"
+              onChange={(e) => setNic(e.target.value)}
+            ></input>
+            {error && nic.length <= 0 ? <label> NIC can't be empty</label> : ""}
+            <br />
+            <br />
+            <input
+              type="text"
+              placeholder="Mobile number"
+              value={mobile}
+              onChange={(e) => setMobile(e.target.value)}
+            ></input>
+            {error && mobile.length <= 0 ? (
+              <label> Mobile number can't be empty</label>
+            ) : (
+              ""
+            )}
+            <br />
+            <br />
+            <input
+              type="text"
+              placeholder="Hometown"
+              value={hometown}
+              onChange={(e) => setHometown(e.target.value)}
+            ></input>
+            {error && hometown.length <= 0 ? (
+              <label> Hometown can't be empty</label>
+            ) : (
+              ""
+            )}
+            <br />
+            <br />
+            {/* <button onClick={face}>take face details</button><br></br> */}
+            <button className="btnsubmit" onClick={handleclick}>
+              Update Data
+            </button>
 
             {/* </form> */}
           </div>

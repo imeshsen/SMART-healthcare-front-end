@@ -1,3 +1,4 @@
+import axios from "axios";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -12,8 +13,9 @@ export default function Lgin() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        alert("Success!");
-        navigate(`/user/${nic}`);
+        axios.get("http://127.0.0.1:5000/start");
+        // alert("Success!");
+        // navigate(`/user/${nic}`);
         // ...
       })
       .catch((error) => {
