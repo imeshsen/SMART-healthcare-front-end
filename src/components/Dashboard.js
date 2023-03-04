@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Dash.css";
 import Navbar from "./Navbar";
+import image from "../assets/image6.jpg";
 
 export default function () {
   const [name, setName] = useState("");
@@ -49,21 +50,21 @@ export default function () {
     });
   };
   return (
-    <div className="bar">
+    <div
+      style={{
+        backgroundImage: `url(${image})`,
+        height: "100vh",
+        fontSize: "15px",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <Navbar />
       <div className="content">
-        <div className="content-left">
-          {/* <a>ddscdsc</a>
-          <a>sefesfe</a>
-          panel
-          <br />
-          dasas */}
-        </div>
-        <div className="content-right">
+        <div>
           <h1>Welcome</h1>
           <h3>Fill up your personal information</h3>
-          <div className="form">
-            {/* <form action="http://127.0.0.1:5000/add" method="POST"> */}
+          <div>
             <input
               type="text"
               placeholder="Name with initials"
@@ -114,12 +115,9 @@ export default function () {
             )}
             <br />
             <br />
-            {/* <button onClick={face}>take face details</button><br></br> */}
             <button className="btnsubmit" onClick={handleclick}>
-              Update Data
+              Submit
             </button>
-
-            {/* </form> */}
           </div>
         </div>
       </div>

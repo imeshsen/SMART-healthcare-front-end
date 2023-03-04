@@ -52,7 +52,7 @@ export default function Disease() {
             </select>
             <Link
               className="btn btn-primary my-2 mx-6 text-right"
-              style={{ width: "200px" }}
+              style={{ width: "100px" }}
               to={`/selected/${value}`}
             >
               Go
@@ -61,7 +61,7 @@ export default function Disease() {
             <Link
               type="button"
               class="btn btn-success my-2 mx-6"
-              style={{ width: "500px" }}
+              style={{ width: "400px" }}
               to={"/list"}
             >
               View full list

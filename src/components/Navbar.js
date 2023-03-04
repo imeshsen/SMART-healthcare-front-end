@@ -1,5 +1,4 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
@@ -7,14 +6,8 @@ function Navbar() {
     <div className="Navbar">
       <div className="leftSide">
         <div className="links">
-          <a href="/">Home</a>
-          <a>Profile</a>
-          <a>About</a>
+          <a href="/">Logout</a>
         </div>
-      </div>
-      <div className="rightSide">
-        <input type="text" placeholder="Search"></input>
-        <button>Search</button>
       </div>
     </div>
   );

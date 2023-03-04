@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import image from "../assets/image.jpg";
+import image from "../assets/image5.jpg";
 import HomeNavbar from "./HomeNavbar";
 
 export default function Signinopttions() {
