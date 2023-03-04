@@ -1,50 +1,28 @@
-.login .flex-left{
-    padding: 15px;
-    width: 50%;
-    height: auto;
-    border-radius: 5px;
-    background-color: rgb(181, 219, 253);
-    box-shadow: hsl(210, 16%, 93%);
-    margin-left: 300px;
-    
+.btnlgin {
+  border: none;
+  width: 40%;
+  border-radius: 5px;
+  background-color: rgb(24, 212, 150);
+  height: 30px;
+  color: aliceblue;
+  cursor: pointer;
 }
 
-.login .flex-left input{
-    width: 40%;
-    height: 25px;
-    border-radius: 5px;
-    border: none;
-    
+.login {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  color: #e9ecef;
 }
 
-.btnlgin{
-    border: none;
-    width: 40%;
-    border-radius: 5px;
-    background-color: rgb(24, 212, 150);
-    height: 25px;
-    color: aliceblue;
-    cursor: pointer;
+.form {
+  margin-top: 200px;
+  color: black;
 }
 
-.login{
-    /* background-color: rgb(125, 149, 158);
-    height: 100vh;
-    text-align: center;
-    height: 100vh;
-    padding: 15%;
-    margin: auto; */
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-    padding: 15%;
-    width: 100vw;
-    height: 100vh;
-    text-align: center;
-    color: #e9ecef;
-    
+.form input {
+  border-color: black;
+  width: 40%;
+  height: 30px;
+  border-radius: 5px;
 }
-
-.login .flex-left h1{
-    color: black;
-}
-
-

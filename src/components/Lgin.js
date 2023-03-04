@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "./Firebase-Config";
 import "./Lgin.css";
+import image from "../assets/image2.jpg";
+import HomeNavbar from "./HomeNavbar";
 
 export default function Lgin() {
   const navigate = useNavigate();
@@ -15,7 +17,6 @@ export default function Lgin() {
         const user = userCredential.user;
         alert("Success!");
         navigate(`/user/${nic}`);
-        
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -29,8 +30,18 @@ export default function Lgin() {
   const [nic, setNic] = useState("");
 
   return (
-    <div className="login">
-      <div className="flex-left">
+    <div
+      className="login"
+      style={{
+        backgroundImage: `url(${image})`,
+        height: "100vh",
+        fontSize: "15px",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <HomeNavbar />
+      <div className="form">
         <h1>Login</h1>
         <input
           type="NIC"

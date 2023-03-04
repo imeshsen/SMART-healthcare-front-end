@@ -23,11 +23,11 @@ export default function Mapper() {
           <Route path="/lgin" element={<Lgin />}></Route>
           <Route path="/user/:nic" element={<Usr />}></Route>
           <Route path="/admin" element={<Admin />}></Route>
-          <Route path="/disease" element={<Disease/>}></Route>
-          <Route path="/list" element={<Diseaselist/>}></Route>
-          <Route path="/selected/:value" element={<Selecteddisease/>}></Route>
-          <Route path="/contact/:specialist" element={<ContactSpecialist/>}></Route>
-          <Route path="/options" element={<Signinopttions/>}></Route>
+          <Route path="/disease" element={<Disease />}></Route>
+          <Route path="/list" element={<Diseaselist />}></Route>
+          <Route path="/selected/:value" element={<Selecteddisease />}></Route>
+          <Route path="/contact/:specialist" element={<ContactSpecialist />}></Route>
+          <Route path="/options" element={<Signinopttions />}></Route>
         </Routes>
       </Router>
     </div>

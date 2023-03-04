@@ -1,11 +1,8 @@
 .form1 {
-  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-  padding: 15%;
   height: 100vh;
   width: 100vw;
-  margin: auto;
   text-align: center;
-  color: #e9ecef;
+  color: #000000;
   
 }
 
@@ -18,7 +15,7 @@
   border-radius: 5px;
   box-shadow: #e9ecef;
   border: none;
-  width: 100px;
+  width: 200px;
 }
 
 .btn2 {
@@ -29,7 +26,9 @@
   padding: 15px;
   border-radius: 5px;
   border: none;
-  width: 100px;
+  width: 200px;
 }
 
-
+.section{
+  margin-top: 200px;
+}
