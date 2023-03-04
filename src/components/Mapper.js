@@ -10,6 +10,7 @@ import Disease from "./Disease";
 import Diseaselist from "./Diseaselist";
 import Selecteddisease from "./Selecteddisease";
 import ContactSpecialist from "./ContactSpecialist";
+import Signinopttions from "./Signinopttions";
 
 export default function Mapper() {
   return (
@@ -26,6 +27,7 @@ export default function Mapper() {
           <Route path="/list" element={<Diseaselist/>}></Route>
           <Route path="/selected/:value" element={<Selecteddisease/>}></Route>
           <Route path="/contact/:specialist" element={<ContactSpecialist/>}></Route>
+          <Route path="/options" element={<Signinopttions/>}></Route>
         </Routes>
       </Router>
     </div>

@@ -13,10 +13,9 @@ export default function Lgin() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        axios.get("http://127.0.0.1:5000/start");
-        // alert("Success!");
-        // navigate(`/user/${nic}`);
-        // ...
+        alert("Success!");
+        navigate(`/user/${nic}`);
+        
       })
       .catch((error) => {
         const errorCode = error.code;

@@ -34,7 +34,7 @@ export default function () {
         body: JSON.stringify(patient),
       }).then(() => {
         axios.post("http://127.0.0.1:5000/add", patient);
-        navigate(`/user/${patient.nic}`);
+        // navigate(`/user/${patient.nic}`);
       });
     }
   };
